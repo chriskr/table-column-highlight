@@ -1,19 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import styled from 'styled-components';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import TableWithColumnHighlight from './TableWithColumnHighlight';
 
+const Container = styled.div`
+  height: 90vh;
+  width: 90vw;
+  margin: 5vh 5vw;
+  border: 1px solid hsl(0, 0%, 75%);
+  box-sizing: border-box;
+  overflow: auto;
+`;
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Container>
+      <TableWithColumnHighlight columnCount={100} rowCount={100} />
+    </Container>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
