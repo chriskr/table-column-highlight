@@ -75,11 +75,11 @@ const TableWithColumnHighlight = ({
       <tbody>
         {Array.from(range(rowCount)).map((rowIndex) => (
           <Tr key={`tr-${rowIndex}`}>
-            {Array.from(range(columnCount)).map((columenIndex) => (
+            {Array.from(range(columnCount)).map((columnIndex) => (
               <Td
-                key={`tr-${columenIndex}`}
-                data-column-index={columenIndex}
-              >{`cell ${rowIndex * columnCount + columenIndex}`}</Td>
+                key={`tr-${columnIndex}`}
+                data-column-index={columnIndex}
+              >{`cell ${rowIndex * columnCount + columnIndex}`}</Td>
             ))}
           </Tr>
         ))}
