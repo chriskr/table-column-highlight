@@ -43,8 +43,6 @@ const Td = styled.td`
   white-space: nowrap;
 `;
 
-let t: any = null;
-
 const TableWithColumnHighlight = ({
   rowCount,
   columnCount,
@@ -54,24 +52,16 @@ const TableWithColumnHighlight = ({
 }) => {
   const [columnHighlightIndex, setColumnHighlightIndex] = useState(-1);
 
-  const onMouseOver = (event: React.MouseEvent) => {
-    if (!(event.target instanceof HTMLElement)) {
-      setColumnHighlightIndex(-1);
-      return;
-    }
-    const currentIndex = Number.parseInt(
-      event.target.closest('td')?.dataset.columnIndex ?? '-1'
-    );
-
-    if (currentIndex !== columnHighlightIndex) {
-      setColumnHighlightIndex(currentIndex);
-    }
-  };
-
   return (
     <Table
       onMouseLeave={() => setColumnHighlightIndex(-1)}
-      onMouseOver={onMouseOver}
+      onMouseOver={({ target }: React.MouseEvent) =>
+        setColumnHighlightIndex(
+          Number.parseInt(
+            (target as HTMLElement).closest('td')?.dataset.columnIndex ?? '-1'
+          )
+        )
+      }
     >
       <colgroup>
         {Array.from(range(columnCount)).map((index) => (
