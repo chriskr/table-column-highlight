@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/table-column-highlight/build/static/css/main.e6c13ad2.css",
+    "main.js": "/table-column-highlight/build/static/js/main.2398e080.js",
+    "index.html": "/table-column-highlight/build/index.html",
+    "main.e6c13ad2.css.map": "/table-column-highlight/build/static/css/main.e6c13ad2.css.map",
+    "main.2398e080.js.map": "/table-column-highlight/build/static/js/main.2398e080.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.2398e080.js"
+  ]
+}
